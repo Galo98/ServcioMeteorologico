@@ -11,9 +11,9 @@
     <h1> Servicio Meteorológico</h1>
     <h2>Los hijos de puta</h2>
     <form action="validar.php" method="post">
-    <input type="date" name="date" required >
-    <input type="submit" name="consulta" value="Enviar Datos">
-    <br>
-  </form>
+      <input type="date" name="date" required >
+      <input type="submit" name="consulta" value="Enviar Datos">
+      <br>
+    </form>
 </body>
 </html>
