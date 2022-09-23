@@ -24,3 +24,4 @@ El buscador debe permitir:
 Traer los datos de un mes ingresado, mostrar el dia ingresado y dar una descripcion del mismo.
 
 Una vez realizada la busqueda ademas de los datos generales, me debe mostrar la cantidad de dias con lluvias consecutivas e indicar en una escala de mayor a menor los mc precipitados.
+ siempre hay que poner un pull , para ver los nuevos trabajos.
