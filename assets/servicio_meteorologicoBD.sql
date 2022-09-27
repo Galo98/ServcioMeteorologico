@@ -9,7 +9,7 @@ create table dia(
     );
 
 create table llovio(
-    id int,
+    id int auto_increment,
     if_rain boolean,
     cantidad float,
     tipo_clima varchar (30),
@@ -17,3 +17,6 @@ create table llovio(
     primary key(id),
     foreign key(id_dia) references dia(id_dia)
 );
+
+#select * from dia;
+#select * from llovio;
