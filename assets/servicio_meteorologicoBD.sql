@@ -1,4 +1,4 @@
--- drop database escuela;
+#drop database servicio_meteorologico_bd;
 create database servicio_meteorologico_bd;
 use servicio_meteorologico_bd;
 
@@ -13,7 +13,7 @@ create table llovio(
     if_rain boolean,
     cantidad float,
     tipo_clima varchar (30),
-    primary key(id),
     id_dia int,
-    foreign key(dia) references dia(id_dia)
+    primary key(id),
+    foreign key(id_dia) references dia(id_dia)
 );
