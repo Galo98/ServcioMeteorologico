@@ -20,3 +20,5 @@ create table llovio(
 
 #select * from dia;
 #select * from llovio;
+
+#select dia.id_dia,dia.fecha, llovio.if_rain,llovio.cantidad,llovio.tipo_clima from dia inner join llovio on dia.id_dia = llovio.id_dia;
