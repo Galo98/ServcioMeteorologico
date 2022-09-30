@@ -1,5 +1,22 @@
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400;500;600;700;800;900&display=swap');
 
-    --color-rojo-100: red;
+
+:root{
+    
+    --color-texto-blanco : #f1faee;
+    --color-texto-oscuro: #000814;
+
+    --color-rojo-100: #e63946;
+    --color-celeste-100 : #a8dadc;
+    --color-celeste-200: #457b9d;
+    --color-celeste-300 : #1d3557;
+
+    --fuente-100 : 100 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-300 : 300 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-400 : 400 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-500 : 500 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-600 : 6g00 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-700 : 700 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
+    --fuente-800 : 800 clamp(0.8rem, 1.5vh, 1.5rem) 'Exo 2', sans-serif;
 
 }
