@@ -13,22 +13,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicio Meteorológico</title>
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
 </head>
 <body>
-  <header>
-    <h1>Servicio Meteorológico</h1>
-    <nav>
-      <ul>
-      <li><a href="ingreso.php">Registrar datos</a></li>
-      <li><a href="editar.php">Modificar datos cargados</a></li>
-      <li><a href="nuevoingreso.php">nuevo registro</a></li>
+  <header class="cabecera">
+    <h1 class="cabecera-logo">Servicio Meteorológico</h1>
+    <nav class="cabecera-nav">
+      <ul class="cabecera__nav-lista">
+      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="ingreso.php">Registrar datos</a></li>
+      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="editar.php">Modificar datos cargados</a></li>
+      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="nuevoingreso.php">nuevo registro</a></li>
       </ul>
     </nav>
   </header>
-    <form action="validar.php" method="post">
-      <input type="date" name="date" required >
-      <input type="submit" name="consulta" value="Enviar Datos">
-      <br>
-    </form>
+
+
 </body>
 </html>
