@@ -3,7 +3,7 @@
 31 enero,marzo,mayo,julio,agosto,octubre,diciembre
 30 abril,junio,septiembre,noviembre
 28 febrero
-    */
+*/
 
     #region Funcion mes de 31 dias
 function crearMesLargo(){
