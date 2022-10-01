@@ -1,0 +1,35 @@
+.contenedor-deslisable{
+
+    background-color: #cccccc;
+
+}
+
+.deslisable {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.label{
+    display: flex;
+    gap: .5rem;
+}
+
+.label-input{
+    max-width: 50px;
+    outline: none;
+}
+
+.btn-ingreso{
+    background-color: var(--color-celeste-300);
+    color: var(--color-celeste-100);
+    font: var(--texto-500);
+    border: none;
+    padding: .3rem;
+}
+
+.contenedor-btn{
+
+}

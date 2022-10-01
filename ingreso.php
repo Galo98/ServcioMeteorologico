@@ -30,7 +30,7 @@
     </header>
     <main>
         <h1>Seleccione el mes en el que desea ingresar nuevos datos</h1>
-        <?php crearForumario($mostrar);?>
+        <?php crearForumario($mostrar)?>
     </main>
 </body>
 </html>
