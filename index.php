@@ -21,7 +21,6 @@
       <ul>
       <li><a href="ingreso.php">Registrar datos</a></li>
       <li><a href="editar.php">Modificar datos cargados</a></li>
-      <li><a href="nuevoingreso.php">nuevo registro</a></li>
       </ul>
     </nav>
   </header>
