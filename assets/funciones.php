@@ -26,7 +26,7 @@ function crearMesLargo(){
 <?php    
         }
         #endregion
-    
+
     #region Funcion mes de 30 dias
     function crearMesMedio(){
     for($i = 1; $i <= 30; $i++){

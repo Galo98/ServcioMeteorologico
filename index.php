@@ -23,7 +23,7 @@
       <ul class="cabecera__nav-lista">
       <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="ingreso.php">Registrar datos</a></li>
       <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="editar.php">Modificar datos cargados</a></li>
-      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="nuevoingreso.php">nuevo registro</a></li>
+      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="#"></a></li>
       </ul>
     </nav>
   </header>
