@@ -6,7 +6,16 @@
     --color-texto-blanco : #f1faee;
     --color-texto-oscuro: #000814;
 
+    --color-verde-100: #c7f9cc;
+    --color-verde-200: #80ed99;
+    --color-verde-300: #57cc99;
+    --color-verde-400: #46a948;
+    --color-verde-500: #00916e;
+
     --color-rojo-100: #e63946;
+
+    --color-gris-100 : #e3e3e3;
+
     --color-celeste-100 : #a8dadc;
     --color-celeste-200: #457b9d;
     --color-celeste-300 : #1d3557;
@@ -33,6 +42,14 @@
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    font: var(--texto-100);
 }
 
 input[type=number]::-webkit-inner-spin-button {

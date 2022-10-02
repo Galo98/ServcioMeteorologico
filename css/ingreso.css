@@ -1,15 +1,53 @@
-.contenedor-deslisable{
+.contenedor-forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
 
+.btn-fecha-menu{
+    border: none;
+    border: 2px solid var(--color-gris-100);
+    border-radius: 4px;
+    color: var(--color-celeste-300);
+    font: var(--texto-500);
+    padding: .3rem;
+    width: 90vw;
+}
+
+.btn-fecha-menu:hover{
+    background-color: var(--color-celeste-300);
+    color: var(--color-celeste-100);
+    cursor: pointer;
+}
+
+.form-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: var(--texto-400);
+}
+
+.contenedor-deslisable{
+    min-width: 85vw;
     background-color: #cccccc;
 
 }
 
 .deslisable {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(5,19%);
+    justify-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
     padding: 1rem;
+}
+
+.caja-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
 }
 
 .label{
@@ -18,18 +56,26 @@
 }
 
 .label-input{
-    max-width: 50px;
+    max-width: 70px;
     outline: none;
+    font: var(--texto-400);
+    padding-left: .3rem;
+    line-height: 1.5;
 }
 
 .btn-ingreso{
-    background-color: var(--color-celeste-300);
-    color: var(--color-celeste-100);
-    font: var(--texto-500);
     border: none;
-    padding: .3rem;
+    background-color: var(--color-verde-400);
+    border: 2px solid transparent;
+    color: var(--color-texto-blanco);
+    font: var(--texto-400);
+    text-transform: uppercase;
+    padding: 0 .5rem 0 .5rem;
+    border-radius: 4px;
+    line-height: 1.5;
 }
 
-.contenedor-btn{
-
+.btn-ingreso:hover{
+    cursor: pointer;
+    opacity: 70%;
 }

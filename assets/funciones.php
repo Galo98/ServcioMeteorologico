@@ -10,25 +10,28 @@
 */
 
     #region Funcion crearMes
+
         function crearMes($cantidad,$mes,$año){
-            for($i = 1; $i <= $cantidad; $i++){
-        ?> 
+            for($i = 1; $i <= $cantidad; $i++){?> 
+
                     <label class="label" for="lluvia<?php echo $i;?>">
                         <!-- Ingrese la cantidad llovida para el  -->
                         <?php if($i < 10){
                             echo "0" .$i;
                         }else{
                         echo $i;
-                        }?>/<?php echo $mes;?>/ <?php echo $año;?>
+                        }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
                         <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>"> 
                         <!-- validar que no se ingrese la e y - -->
                         </label>
                     <?php } ?>
                     
         <?php }
+
         #endregion
 
     #region Funcion formulario completo
+    
     function crearForumario($mostrar){
         
         $mes = array(" ","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
@@ -40,13 +43,13 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form method="POST">
+        <form class="form-contenedor" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
                     <div class="deslisable"><?php crearMes(31,$i,2022);?></div>
-                    <button class="btn-ingreso">Guardar registros</button>
+                    <div class="caja-btn"><button class="btn-ingreso">Guardar registros</button></div>
                 </div>
                 <?php } ?>
         </form>
@@ -56,13 +59,13 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form method="POST">
+        <form class="form-contenedor" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
-                    <div class="deslisable"><?php crearMes(31,$i,2022);?></div>
-                    <button class="btn-ingreso">Guardar registros</button>
+                    <div class="deslisable"><?php crearMes(30,$i,2022);?></div>
+                    <div class="caja-btn"><button class="btn-ingreso">Guardar registros</button></div>
                 </div>
                 <?php } ?>
         </form>
@@ -71,13 +74,13 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form method="POST">
+        <form class="form-contenedor" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
-                    <div class="deslisable"><?php crearMes(31,$i,2022);?></div>
-                    <button class="btn-ingreso">Guardar registros</button>
+                    <div class="deslisable"><?php crearMes(28,$i,2022);?></div>
+                    <div class="caja-btn"><button class="btn-ingreso">Guardar registros</button></div>
                 </div>
                 <?php } ?>
         </form>
@@ -87,4 +90,5 @@
         }  
     }
     #endregion
+
 ?>
