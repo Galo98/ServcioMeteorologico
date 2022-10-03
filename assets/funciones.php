@@ -21,7 +21,7 @@
                         }else{
                         echo $i;
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
-                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>"> 
+                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
                         <!-- validar que no se ingrese la e y - -->
                         </label>
                     <?php } ?>
@@ -45,7 +45,7 @@
             <input type="hidden" name="mes" value="<?php echo $i;?>">
             <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form class="form-contenedor" method="POST">
+        <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
                     <div class="deslisable"><?php crearMes(31,$i,2022);?></div>
@@ -61,7 +61,7 @@
             <input type="hidden" name="mes" value="<?php echo $i;?>">
             <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form class="form-contenedor" method="POST">
+        <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
                     <div class="deslisable"><?php crearMes(30,$i,2022);?></div>
@@ -76,7 +76,7 @@
             <input type="hidden" name="mes" value="<?php echo $i;?>">
             <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
         </form>
-        <form class="form-contenedor" method="POST">
+        <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
                 <div class="contenedor-deslisable">
                     <div class="deslisable"><?php crearMes(28,$i,2022);?></div>
@@ -89,6 +89,18 @@
         }
         }  
     }
+    #endregion
+
+    #region Funcion mostrar datos
+
+    function mostrarDatos($datos){
+
+        for($i = 0; $i <= count($datos); $i++){
+            echo "El valor del dia " .$i ." es " .$datos[$i];
+        }
+        
+    }
+
     #endregion
 
 ?>

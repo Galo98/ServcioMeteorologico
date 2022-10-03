@@ -1,13 +1,20 @@
 <?php 
     require "assets/funciones.php";
     $mostrar = 0;
+
     if(isset($_GET['mes']) && $_GET['mes'] >= 1){
         $mostrar = $_GET['mes'];
+
+        if(isset($_POST['lluvia'])){
+            $lluvia = $_POST['lluvia'];
+            echo "Cantidad 0 " .$lluvia[0] ." ,Cantidad 1 " .$lluvia[1];
+        }
     }
+    
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +22,8 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/ingreso.css">
-    <title>Document</title>
+    <title>Servicio Meteorologico | Ingresos </title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icono/Group-16.ico">
 </head>
 <body>
     <header class="cabecera">
