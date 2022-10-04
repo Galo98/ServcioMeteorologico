@@ -37,11 +37,32 @@
         </ul>
     </nav>
     </header>
-    <main>
-        <h1>Se han guardado los siguientes datos</h1>
-        <div class="contenedor-muestra">
-            <?php mostrarDatos($lluvia); ?>
-        </div>
+    <main class="muestra">
+        <section class="muestra__contenedor">
+            <article class="muestra__contenedor__articulos">
+                <p class="muestra__contenedor__articulos__titulos">
+                    Se han guardado los siguientes datos</p>
+                <div class="muestra__contenedor__articulos__items">
+                    <?php mostrarDatos($lluvia); ?>
+                </div>
+            </article>
+            <article class="muestra__contenedor__articulos">
+                <p class="muestra__contenedor__articulos__titulos">
+                    Fechas con lluvias consecutivas
+                </p>
+                <div class="muestra__contenedor__articulos__items">
+
+                </div>
+            </article>
+            <article class="muestra__contenedor__articulos">
+                <p class="muestra__contenedor__articulos__titulos">
+                    Fecha con mayor cantidad de lluvia
+                </p>
+                <div class="muestra__contenedor__articulos__items">
+
+                </div>
+            </article>
+        </section>
     </main>
 </body>
 </html>

@@ -1,7 +1,23 @@
-.contenedor-muestra{
+.muestra{
+    width: 98vw;
+    
+}
+
+.muestra__contenedor{
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     gap: .8rem;
 }
 
+.muestra__contenedor__articulos{
+    
+}
+
+.muestra__contenedor__articulos__titulos{
+
+}
+
+.muestra__contenedor__articulos__items{
+
+}
