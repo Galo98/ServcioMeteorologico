@@ -119,7 +119,7 @@
 
     #endregion
 
-    #region Funcion rrellenar array
+    #region Funcion rellenar array
     
     function rellenar($array){
         $validado = array();
