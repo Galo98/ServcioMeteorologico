@@ -21,7 +21,7 @@
                         }else{
                         echo $i;
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
-                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>" value=0>
+                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
                         <!-- validar que no se ingrese la e y - -->
                         </label>
                     <?php } ?>
@@ -90,30 +90,69 @@
         }  
     }
     #endregion
+    
+    #region Funcion validar array
+
+    function validarArray($array){
+        $resultados = array();
+
+        for($i = 0; $i < count($array);$i++){
+
+            if($array[$i] == ""){
+                // esta vacio para que no se cargue nada y sirva el empty()
+            }else{
+                $resultados[$i] = "tiene algo";
+                $i = count($array) + 5;
+            }
+
+        }
+
+        $validacion = empty($resultados);
+
+        if($validacion == 1){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    #endregion
+
+    #region Funcion rrellenar array
+    
+    function rellenar($array){
+        $validado = array();
+        for($i = 0; $i < count($array); $i++){
+            if($array[$i] == ""){
+                $validado[$i] = 0;
+            }else{
+                $validado[$i] = $array[$i];
+            }
+        }
+        return $validado;
+    }
+
+    #endregion
 
     #region Funcion mostrar datos
 
     function mostrarDatos($datos){
 
-        for($i = 0; $i <= count($datos); $i++){
-            echo "El valor del dia " .$i ." es " .$datos[$i];
+        for($i = 0; $i < count($datos); $i++){
+
+            if($datos[$i] != 0){?>
+
+            <p>El valor del dia <?php echo $i;?> es <?php echo $datos[$i];?></p>
+
+            <?php
+            }
+
         }
         
     }
 
     #endregion
 
-    #region Funcion validar inputs
-
-    function validarInput($array){
-        $validado = array();
-        for($i = 0; $i <= count($datos); $i++){
-            if($datos[i] == "" || $datos[i] == " "){
-                
-            }
-        }
-    }
-
-    #endregion
 
 ?>

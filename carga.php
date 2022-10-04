@@ -1,15 +1,17 @@
 <?php 
     require "assets/funciones.php";
 
-    if(!isset($_POST['lluvia'])){
-        echo "Hoops!  ha ocurrido un error!";
-        }else{
+    if(validarArray($_POST['lluvia'])){
+
+        echo "oops!  No se han cargado datos en el formulario!";
+        
+    }else{  
         $lluvia = array();
-        $lluvia = $_POST['lluvia'];
+
+        $lluvia = rellenar($_POST['lluvia']);
+        
         
     
-    
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/carga.css">
     <title>Servicio Meteorologico</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/icono/Group-16.ico">
 </head>
@@ -36,11 +39,15 @@
     </header>
     <main>
         <h1>Se han guardado los siguientes datos</h1>
-        <?php mostrarDatos($lluvia); ?>
+        <div class="contenedor-muestra">
+            <?php mostrarDatos($lluvia); ?>
+        </div>
     </main>
 </body>
 </html>
 
 <?php 
 
-}?>
+}
+
+?>

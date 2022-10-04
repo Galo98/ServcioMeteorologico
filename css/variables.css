@@ -50,7 +50,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    font: var(--texto-100);
+    font: var(--texto-500);
 }
 
 input[type=number]::-webkit-inner-spin-button {
