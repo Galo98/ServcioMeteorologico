@@ -1,7 +1,10 @@
 <?php 
     require "assets/funciones.php";
 
-    if(isset($_POST['lluvia'])){
+    if(!isset($_POST['lluvia'])){
+        echo "Hoops!  ha ocurrido un error!";
+        }else{
+        $lluvia = array();
         $lluvia = $_POST['lluvia'];
         
     
@@ -39,6 +42,5 @@
 </html>
 
 <?php 
-}else{
-    echo "Hoops!  ha ocurrido un error!";
+
 }?>

@@ -21,7 +21,7 @@
                         }else{
                         echo $i;
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
-                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
+                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>" value=0>
                         <!-- validar que no se ingrese la e y - -->
                         </label>
                     <?php } ?>
@@ -99,6 +99,19 @@
             echo "El valor del dia " .$i ." es " .$datos[$i];
         }
         
+    }
+
+    #endregion
+
+    #region Funcion validar inputs
+
+    function validarInput($array){
+        $validado = array();
+        for($i = 0; $i <= count($datos); $i++){
+            if($datos[i] == "" || $datos[i] == " "){
+                
+            }
+        }
     }
 
     #endregion
