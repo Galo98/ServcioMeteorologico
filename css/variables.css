@@ -47,7 +47,8 @@
 body{
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     font: var(--texto-100);
 }

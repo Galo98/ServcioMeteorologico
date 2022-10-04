@@ -3,8 +3,8 @@
 
     if(isset($_POST['lluvia'])){
         $lluvia = $_POST['lluvia'];
-        mostrarDatos($lluvia);
-    }
+        
+    
     
 
 ?>
@@ -21,18 +21,24 @@
 </head>
 <body>
     <header class="cabecera">
-    <h1 class="cabecera-logo">Servicio Meteorológico</h1>
+    <div class="cabecera-logo"><p>Servicio Meteorológico</p><img class="imgLogo" src="img/icono/Group 16.png" alt="Logo Servicio Meteorológico"></div>
     <nav class="cabecera-nav">
         <ul class="cabecera__nav-lista">
         <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="index.php">Home</a></li>
-        <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="editar.php">Modificar datos cargados</a></li>
+        <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="ingreso.php">Registrar datos</a></li>
+        <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="editar.php">Modificar registros</a></li>
         <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="#"></a></li>
         </ul>
     </nav>
     </header>
     <main>
         <h1>Se han guardado los siguientes datos</h1>
-        <?php ?>
+        <?php mostrarDatos($lluvia); ?>
     </main>
 </body>
 </html>
+
+<?php 
+}else{
+    echo "Hoops!  ha ocurrido un error!";
+}?>
