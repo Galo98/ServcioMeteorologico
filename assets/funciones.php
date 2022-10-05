@@ -23,6 +23,7 @@
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
                         <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
                         <!-- validar que no se ingrese la e y - -->
+                        <input type="hidden" name="fecha[]" value="<?php echo $i ."-" .$mes ."-" .$año;?>">
                         </label>
                     <?php } ?>
                     
@@ -137,13 +138,13 @@
 
     #region Funcion mostrar datos
 
-    function mostrarDatos($datos){
+    function mostrarDatos($datos,$fecha){
 
         for($i = 0; $i < count($datos); $i++){
 
             if($datos[$i] != 0){?>
 
-            <p>El valor del dia <?php echo $i;?> es <?php echo $datos[$i];?></p>
+            <p>En la fecha  <?php echo $fecha[$i];?> se registraron <?php echo $datos[$i];?> <sub>ml</sub></p>
 
             <?php
             }
@@ -154,5 +155,22 @@
 
     #endregion
 
+    #region Funcion mayor dia lluvioso posicion 0 = lluvia posicion 1 = posicion array
 
+    function lluviaMaxima($variable){
+        $valor = 0;
+        $posicion = 0; 
+        $valores = array();
+        for($i = 0; $i < count($variable); $i++){
+            if($variable[$i] > $valor){
+                $valor = $variable[$i];
+                $posicion = $i;
+            }
+        }
+        $valores[0] = $valor;
+        $valores[1] = $posicion;
+        return $valores;
+    }
+
+    #endregion
 ?>

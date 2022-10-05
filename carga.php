@@ -6,11 +6,15 @@
         echo "oops!  No se han cargado datos en el formulario!";
         
     }else{  
+        $fecha = array();
         $lluvia = array();
 
         $lluvia = rellenar($_POST['lluvia']);
+        $fecha = $_POST['fecha'];
         
-        
+        $resul = lluviaMaxima($lluvia);
+        $cantidad = $resul[0];
+        $fec = $resul[1] - 1;
     
 ?>
 <!DOCTYPE html>
@@ -43,7 +47,7 @@
                 <p class="muestra__contenedor__articulos__titulos">
                     Se han guardado los siguientes datos</p>
                 <div class="muestra__contenedor__articulos__items">
-                    <?php mostrarDatos($lluvia); ?>
+                    <?php mostrarDatos($lluvia,$fecha); ?>
                 </div>
             </article>
             <article class="muestra__contenedor__articulos">
@@ -59,7 +63,7 @@
                     Fecha con mayor cantidad de lluvia
                 </p>
                 <div class="muestra__contenedor__articulos__items">
-
+                    <p>La fecha registrada de mayor precipitación es <?php echo $fecha[$fec]?> con <?php echo $cantidad;?><sub>mm</sub></p>
                 </div>
             </article>
         </section>
