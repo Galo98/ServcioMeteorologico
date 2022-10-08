@@ -4,20 +4,29 @@
 }
 
 .muestra__contenedor{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: .8rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
 .muestra__contenedor__articulos{
-    
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+}
+
+.medio{
+    border-left: 2px solid green;
+    border-right: 2px solid green;
 }
 
 .muestra__contenedor__articulos__titulos{
-
+    margin-bottom: 2rem;
+    font: var(--titulo-700);
+    border-bottom: 2px solid green;
 }
 
 .muestra__contenedor__articulos__items{
-
+    line-height: 1.5;
+    
 }

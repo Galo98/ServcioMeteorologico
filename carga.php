@@ -54,7 +54,7 @@
                     <?php mostrarDatos($lluvia,$fecha); ?>
                 </div>
             </article>
-            <article class="muestra__contenedor__articulos">
+            <article class="muestra__contenedor__articulos medio">
                 <p class="muestra__contenedor__articulos__titulos">
                     Fechas con lluvias consecutivas
                 </p>

@@ -2,7 +2,7 @@
 
 // Colocamos 12 formularios dado que si hicieramos las validaciones para los meses de 31 dias, 30 dias o el mes de febrero, seria de dificil lectura de codigo dado que se deberia cerrar y abrir mucho la etiqueta de PHP
 
-
+// para bd hacer un select donde el campo lluvia sea > 0;
 /*
 31 enero,marzo,mayo,julio,agosto,octubre,diciembre 1,3,5,7,8,10,12
 30 abril,junio,septiembre,noviembre 4,6,9,11
@@ -189,7 +189,7 @@
                     $retornoConsecutivo = array_merge($retornoConsecutivo,$consecutivo);
                     $consecutivo = array();
                 }else{
-                    $consecutivo = array();
+                    $consecutivo = array(); // por las dudas se vacia igual
                 }
             }
         }
@@ -197,9 +197,9 @@
     }
 
     #endregion
-    // para bd hacer un select donde el campo lluvia sea > 0;
+    
     #region Funcion mostrarConsecutivos
-
+    
     function mostrarConsecutivos($datos,$fechas,$indices){
         for($i=0; $i<count($indices);$i++){
             echo "Fecha " .$fechas[$indices[$i]] ." precipitación " .$datos[$indices[$i]] ."<sub>mm</sub> <br>";
@@ -207,4 +207,5 @@
     }
 
     #endregion
+
 ?>

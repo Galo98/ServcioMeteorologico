@@ -9,12 +9,17 @@
 }
 
 .cabecera-logo{
-    color: var(--color-texto-blanco);
     font: var(--titulo-500);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-left: .5rem;
+}
+
+.logo-list{
+    display: flex;
+    text-decoration: none;
+    color: var(--color-texto-blanco);
 }
 
 .imgLogo{
