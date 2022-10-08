@@ -173,4 +173,38 @@
     }
 
     #endregion
+
+    #region Funcion lluviaConsecutiva
+
+    function lluviaConsecutiva($datos){
+
+        $consecutivo = array();
+        $retornoConsecutivo = array();
+
+        for($i = 0; $i < count($datos); $i++){
+            if($datos[$i] > 0){
+                $consecutivo[] = $i;
+            }else if($datos[$i] <= 0){
+                if(count($consecutivo) >= 2){
+                    $retornoConsecutivo = array_merge($retornoConsecutivo,$consecutivo);
+                    $consecutivo = array();
+                }else{
+                    $consecutivo = array();
+                }
+            }
+        }
+        return $retornoConsecutivo;
+    }
+
+    #endregion
+    // para bd hacer un select donde el campo lluvia sea > 0;
+    #region Funcion mostrarConsecutivos
+
+    function mostrarConsecutivos($datos,$fechas,$indices){
+        for($i=0; $i<count($indices);$i++){
+            echo "Fecha " .$fechas[$indices[$i]] ." precipitación " .$datos[$indices[$i]] ."<sub>mm</sub> <br>";
+        }
+    }
+
+    #endregion
 ?>

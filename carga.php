@@ -15,6 +15,10 @@
         $resul = lluviaMaxima($lluvia);
         $cantidad = $resul[0];
         $fec = $resul[1] - 1;
+
+        $indices = lluviaConsecutiva($lluvia);
+
+
     
 ?>
 <!DOCTYPE html>
@@ -55,7 +59,7 @@
                     Fechas con lluvias consecutivas
                 </p>
                 <div class="muestra__contenedor__articulos__items">
-
+                    <?php mostrarConsecutivos($lluvia,$fecha,$indices)?>
                 </div>
             </article>
             <article class="muestra__contenedor__articulos">
