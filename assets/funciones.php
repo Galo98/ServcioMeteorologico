@@ -23,9 +23,12 @@
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
                         <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
                         <!-- validar que no se ingrese la e y - -->
-                        <input type="hidden" name="fecha[]" value="<?php echo $i ."-" .$mes ."-" .$año;?>">
+                        <input type="hidden" name="dia[]" value="<?php echo $i;?>">
                         </label>
                     <?php } ?>
+
+                    <input type="hidden" name="mes" value="<?php echo $mes;?>">
+                    <input type="hidden" name="año" value="<?php echo $año;?>">
                     
         <?php }
 
@@ -44,7 +47,7 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?></button>
         </form>
         <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
@@ -60,7 +63,7 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?></button>
         </form>
         <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
@@ -75,7 +78,7 @@
 
         <form method="GET">
             <input type="hidden" name="mes" value="<?php echo $i;?>">
-            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?> / 2022</button>
+            <button class="btn-fecha-menu"> Mes de <?php echo $mes[$i]; ?></button>
         </form>
         <form class="form-contenedor" action="carga.php" method="POST">
             <?php if($mostrar == $i){ ?>
@@ -138,19 +141,30 @@
 
     #region Funcion mostrar datos
 
-    function mostrarDatos($datos,$fecha){
-
-        for($i = 0; $i < count($datos); $i++){
-
-            if($datos[$i] != 0){?>
-
-            <p>En la fecha  <?php echo $fecha[$i];?> se registraron <?php echo $datos[$i];?> <sub>ml</sub></p>
-
-            <?php
-            }
-
-        }
-        
+    function mostrarDatos($datos,$fecha){ ?>
+    <div class="contenedor-carga">
+            <div class="carga-muestra">
+                <div class="carga-dia">
+                    <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
+                    <?php for($i = 0; $i < count($datos); $i++){
+                    if($datos[$i] != 0){?>
+                        <p class="carga-datos"><?php echo $fecha[$i];?></p>
+                    <?php
+                    }
+                }?>
+                </div>
+                <div class="carga-precipitacion">
+                    <p class="muestra__contenedor__articulos__titulos-tabla">Precipitaciones</p>
+                    <?php for($i = 0; $i < count($datos); $i++){
+                        if($datos[$i] != 0){?>
+                        <p class="carga-datos"> <?php echo $datos[$i];?> <i class="fa-solid fa-droplet gota"></i></p>
+                    <?php
+                    }
+                }?>
+                </div>
+                </div>
+    </div>
+        <?php
     }
 
     #endregion
@@ -183,7 +197,7 @@
 
         for($i = 0; $i < count($datos); $i++){
             if($datos[$i] > 0){
-                $consecutivo[] = $i;
+                array_push($consecutivo, $i);
             }else if($datos[$i] <= 0){
                 if(count($consecutivo) >= 2){
                     $retornoConsecutivo = array_merge($retornoConsecutivo,$consecutivo);
@@ -199,13 +213,31 @@
     #endregion
     
     #region Funcion mostrarConsecutivos
-    
-    function mostrarConsecutivos($datos,$fechas,$indices){
-        for($i=0; $i<count($indices);$i++){
-            echo "Fecha " .$fechas[$indices[$i]] ." precipitación " .$datos[$indices[$i]] ."<sub>mm</sub> <br>";
-        }
-    }
+
+    function mostrarConsecutivos($datos,$fechas,$indices){?>
+    <div class="contenedor-carga">
+        <div class="carga-muestra">
+            <div class="carga-dia">
+                <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
+                <?php for($i=0; $i < count($indices);$i++){ ?>
+                    <p class="carga-datos"><?php echo $fechas[$indices[$i]];?></p>
+                    <?php
+                }
+            ?>
+            </div>
+            <div class="carga-precipitacion">
+                <p class="muestra__contenedor__articulos__titulos-tabla">Precipitaciones</p>
+                <?php for($i=0; $i<count($indices);$i++){ ?>
+                    <p class="carga-datos"> <?php echo $datos[$indices[$i]]?> <i class="fa-solid fa-droplet gota"></i></p>
+                <?php } ?>
+            </div>
+            </div>
+    </div>
+    <?php } 
+
 
     #endregion
+
+
 
 ?>

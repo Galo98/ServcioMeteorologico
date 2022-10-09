@@ -15,6 +15,7 @@
     --color-rojo-100: #e63946;
 
     --color-gris-100 : #e3e3e3;
+    --color-gris-300: #cec8c8;
 
     --color-celeste-100 : #a8dadc;
     --color-celeste-200: #457b9d;
@@ -36,6 +37,7 @@
     --titulo-700: 700 clamp(1.8rem, 1.5vw, 2.2rem) 'Exo 2', sans-serif;
     --titulo-800: 800 clamp(1.8rem, 1.5vw, 2.2rem) 'Exo 2', sans-serif;
 
+    --titulo-700-c: 700 clamp(2rem, 1.6vw, 2.4rem) 'Exo 2', sans-serif;
 }
 
 * {
@@ -49,7 +51,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
     font: var(--texto-500);
 }
 

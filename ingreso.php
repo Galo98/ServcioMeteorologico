@@ -37,9 +37,9 @@
         </ul>
     </nav>
     </header>
-    <main>
-        <section>
-            <h1>Seleccione el mes en el que desea ingresar nuevos datos</h1>
+    <main class="ingreso">
+        <section class="ingreso__contenedor">
+            <div class="ingreso__contenedor__titulo"><p >Seleccione el mes en el que desea ingresar nuevos datos</p></div>
             <div class="contenedor-forms"><?php crearForumario($mostrar)?></div>
         </section>
     </main>

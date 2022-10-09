@@ -28,7 +28,9 @@
       </ul>
     </nav>
   </header>
+  <main class="cajaindex">
 
+  </main>
 
 </body>
 </html>

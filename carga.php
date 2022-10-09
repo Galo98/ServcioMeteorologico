@@ -6,11 +6,15 @@
         echo "oops!  No se han cargado datos en el formulario!";
         
     }else{  
-        $fecha = array();
+        $dia = array();
         $lluvia = array();
+        
+        $nombreMes = array(" ","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
 
         $lluvia = rellenar($_POST['lluvia']);
-        $fecha = $_POST['fecha'];
+        $dia = $_POST['dia'];
+        $mes = $_POST['mes'];
+        $anio = $_POST['año'];
         
         $resul = lluviaMaxima($lluvia);
         $cantidad = $resul[0];
@@ -18,8 +22,6 @@
 
         $indices = lluviaConsecutiva($lluvia);
 
-
-    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,10 +34,11 @@
     <link rel="stylesheet" href="css/carga.css">
     <title>Servicio Meteorologico</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/icono/Group-16.ico">
+    <script src="https://kit.fontawesome.com/600e7f7446.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="cabecera">
-    <div class="cabecera-logo"><p>Servicio Meteorológico</p><img class="imgLogo" src="img/icono/Group 16.png" alt="Logo Servicio Meteorológico"></div>
+    <div class="cabecera-logo"><a class="logo-list" href="index.php"><p>Servicio Meteorológico</p><img class="imgLogo" src="img/icono/Group 16.png" alt="Logo Servicio Meteorológico"></a></div>
     <nav class="cabecera-nav">
         <ul class="cabecera__nav-lista">
         <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="index.php">Home</a></li>
@@ -46,28 +49,41 @@
     </nav>
     </header>
     <main class="muestra">
+        <div class="muestra__caja"><p class="muestra__caja__titulo"> Mes de <?php echo $nombreMes[$mes];?></p></div>
         <section class="muestra__contenedor">
             <article class="muestra__contenedor__articulos">
                 <p class="muestra__contenedor__articulos__titulos">
-                    Se han guardado los siguientes datos</p>
+                    Registros ingresados
+                </p>
                 <div class="muestra__contenedor__articulos__items">
-                    <?php mostrarDatos($lluvia,$fecha); ?>
+                    <?php mostrarDatos($lluvia,$dia); ?>
                 </div>
             </article>
             <article class="muestra__contenedor__articulos medio">
                 <p class="muestra__contenedor__articulos__titulos">
-                    Fechas con lluvias consecutivas
+                    Lluvias consecutivas
                 </p>
                 <div class="muestra__contenedor__articulos__items">
-                    <?php mostrarConsecutivos($lluvia,$fecha,$indices)?>
+                    <?php mostrarConsecutivos($lluvia,$dia,$indices)?>
                 </div>
             </article>
             <article class="muestra__contenedor__articulos">
                 <p class="muestra__contenedor__articulos__titulos">
-                    Fecha con mayor cantidad de lluvia
+                    Mayor precipitación
                 </p>
                 <div class="muestra__contenedor__articulos__items">
-                    <p>La fecha registrada de mayor precipitación es <?php echo $fecha[$fec]?> con <?php echo $cantidad;?><sub>mm</sub></p>
+                    <div class="contenedor-carga">
+                        <div class="carga-muestra">
+                            <div class="carga-dia">
+                                <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
+                                    <p class="carga-datos"><?php echo $dia[$fec]?></p>
+                            </div>
+                            <div class="carga-precipitacion">
+                                <p class="muestra__contenedor__articulos__titulos-tabla">Precipitación</p>
+                                    <p class="carga-datos"> <?php echo $cantidad;?> <i class="fa-solid fa-droplet gota"></i></p>
+                            </div>
+                            </div>
+                    </div>
                 </div>
             </article>
         </section>

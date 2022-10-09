@@ -1,3 +1,11 @@
+.ingreso__contenedor__titulo{
+    text-align: center;
+    font: var(--titulo-700);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
 .contenedor-forms{
     display: flex;
     flex-direction: column;
@@ -17,8 +25,8 @@
 }
 
 .btn-fecha-menu:hover{
-    background-color: var(--color-celeste-300);
-    color: var(--color-celeste-100);
+    background-color: var(--color-gris-300);
+    color: var(--color-texto-blanco);
     cursor: pointer;
 }
 
