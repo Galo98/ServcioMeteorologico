@@ -3,7 +3,7 @@
     $serv = "localhost";
     $usu = "root";
     $pass = "";
-    $bd = "servicio_meteorologico_bd";
+    $bd = "serviciomet";
 
     $con = mysqli_connect($serv,$usu,$pass,$bd);
 
