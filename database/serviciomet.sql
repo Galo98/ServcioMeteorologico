@@ -24,3 +24,7 @@ create table datos(
     foreign key (anio) references anio(fecha),
     primary key (dia,mes,anio)
 );
+
+select * from datos;
+
+# drop database serviciomet;

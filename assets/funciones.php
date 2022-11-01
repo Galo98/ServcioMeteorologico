@@ -1,5 +1,6 @@
 <?php 
 
+
 // Colocamos 12 formularios dado que si hicieramos las validaciones para los meses de 31 dias, 30 dias o el mes de febrero, seria de dificil lectura de codigo dado que se deberia cerrar y abrir mucho la etiqueta de PHP
 
 // para bd hacer un select donde el campo lluvia sea > 0;
@@ -238,6 +239,37 @@
 
     #endregion
 
+    #region Funcion insertMes
 
+    function insertMes($mes,$anio,$array){
+        
+        $insert = "";
+        $con = conectarBD();
+        $b = 1; // Indica el dia
+
+        for($i = 0; $i < count($array) ; $i++){
+            $max = count($array) - 1;
+            if($i == $max){
+                $insert = $insert  ."($b,$mes,$anio,$array[$i])"; // el ultimo value va a ser sin ,
+            }else{
+                $insert = $insert  ."($b,$mes,$anio,$array[$i]),"; // desde el primer a anteultimo valu van con ,
+            }
+            $b++; // se incrementa el dia
+        }
+
+        $sql = "insert into datos (dia,mes,anio,cantidad) values $insert;";
+
+        mysqli_query($con,$sql);
+
+        if(mysqli_affected_rows($con)>0){
+            $mensaje = 1; // Se guardo satisfactoriamente
+        }else{
+            $mensaje = 2; // No se pudo guardar
+        }
+        return $mensaje;
+    }
+
+
+    #endregion
 
 ?>

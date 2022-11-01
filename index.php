@@ -1,8 +1,6 @@
 <?php 
 
-  require "assets/conex.php";
-
-  $consulta = "select * from dia;"
+  
 
 ?>
 <!DOCTYPE html>
