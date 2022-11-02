@@ -1,6 +1,7 @@
 <?php 
 
-  
+  require "assets/funciones.php";
+  require "assets/conex.php";
 
 ?>
 <!DOCTYPE html>
@@ -27,8 +28,16 @@
     </nav>
   </header>
   <main class="cajaindex">
+    <div class="MesesSinPrecipitaciones">
+      <h1>Meses sin precipitaciones</h1>
+      <?php mesesSinLluvia(); ?>
+    </div>
+    <div class="MesConMayorPrecipitacion">
 
+    </div>
   </main>
+  <footer>
 
+  </footer>
 </body>
 </html>

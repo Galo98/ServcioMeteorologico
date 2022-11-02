@@ -272,4 +272,46 @@
 
     #endregion
 
+    #region Funcion mesesSinLluvia
+
+    function mesesSinLluvia(){
+
+        for($i = 1; $i <= 12; $i++){
+            $a = sumaPrecipitacion($i); // sumamos la precipitacion del mes $i
+            if($a < 1 && $a != null){ // si la suma es 0 toma el nombre del mes $i y lo muestra
+                $mesSinPrecipitacion = buscarMes($i);
+                echo "<p>En el mes de " .$mesSinPrecipitacion ." no hubo precipitaciones.</p>";
+            }
+        }
+
+        
+    }
+
+    #endregion
+
+    #region Funcion buscarMes
+
+            function buscarMes($s){ // busca el nombre del mes correspondiente al numero $s, lo convierte en string y lo devuelve
+            $dato = mysqli_query(conectarBD(), "select nombremes from mes where mes = $s");
+            $dato = mysqli_fetch_row($dato);
+            $dato = array_shift($dato);
+
+            return $dato;
+            }
+
+    #endregion
+
+    #region Funcion SumaPrecipitacion
+
+        function sumaPrecipitacion($s){ // suma las precipitaciones del numero del mes ingresado $s, lo convierte en "int" y lo devuelve
+            $dato = mysqli_query(conectarBD(), "select sumaPrecipitaciones($s);");
+            $dato = mysqli_fetch_row($dato);
+            $dato = array_shift($dato);
+            return $dato;
+        }
+    #endregion
+
+
+
+
 ?>
