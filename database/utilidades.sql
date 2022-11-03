@@ -1,39 +1,3 @@
-create database serviciomet;
--- drop database serviciomet;
-use serviciomet;
-
-create table anio(
-	fecha int(4),
-    primary key (fecha)
-);
-insert into anio values(2022);
-
-create table mes(
-	mes int(2),
-    nombremes varchar(20),
-    primary key (mes)
-);
-
-insert into mes values (1,'Enero'),(2,'Febrero'),(3,'Marzo'),(4,'Abril'),(5,'Mayo'),(6,'Junio'),(7,'Julio'),(8,'Agosto'),(9,'Septiembre'),(10,'Octubre'),(11,'Noviembre'),(12,'Diciembre');
-
--- select * from mes;
--- drop table mes;
-
-
-create table datos(
-	dia int (2),
-    mes int (2),
-    anio int(4),
-    cantidad float(4,2),
-    foreign key (mes) references mes(mes),
-    foreign key (anio) references anio(fecha),
-    primary key (dia,mes,anio)
-);
-
--- select * from datos order by mes;
-
-
-
 
 # Creacion de Funcion suma sumaPrecipitaciones 
 

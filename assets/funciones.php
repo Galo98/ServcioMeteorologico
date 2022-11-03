@@ -252,7 +252,7 @@
             if($i == $max){
                 $insert = $insert  ."($b,$mes,$anio,$array[$i])"; // el ultimo value va a ser sin ,
             }else{
-                $insert = $insert  ."($b,$mes,$anio,$array[$i]),"; // desde el primer a anteultimo valu van con ,
+                $insert = $insert  ."($b,$mes,$anio,$array[$i]),"; // desde el primer a anteultimo value van con ,
             }
             $b++; // se incrementa el dia
         }
@@ -294,7 +294,11 @@
             function buscarMes($s){ // busca el nombre del mes correspondiente al numero $s, lo convierte en string y lo devuelve
             $dato = mysqli_query(conectarBD(), "select nombremes from mes where mes = $s");
             $dato = mysqli_fetch_row($dato);
-            $dato = array_shift($dato);
+            if($dato == NULL){
+                $dato = 0;
+            }else{
+                $dato = array_shift($dato);
+            }
 
             return $dato;
             }
@@ -323,13 +327,56 @@
                     $precipitacionMaxima = $precipitacion;
                 }
             }
-            $mes = buscarMes($mesPrecipitacionMaxima);
-            echo "Del año 2022, el mes con mayor precipitacion es " .$mes ." con la cantidad de " .$precipitacionMaxima ."mm";
+            if($precipitacionMaxima == 0){
+                echo "No hay precipitaciones cargadas en el sistema";
+            }else{
+                $mes = buscarMes($mesPrecipitacionMaxima);
+                echo "Del año 2022, el mes con mayor precipitacion es " .$mes ." con la cantidad de " .$precipitacionMaxima ."mm";
+            }
         }
 
     #endregion
 
+    #region Funcion bdStandar
 
+    function bdStandar(){
+        
+        $insert = "";
+        $con = conectarBD();
+        $diasTotales = 31;
+
+        for($j = 1; $j <= 12; $j++){
+            if($j == 2){
+                    $diasTotales = 28;
+                } else if( $j == 4 || $j == 6 || $j == 9 || $j == 11){
+                    $diasTotales = 30;
+                }else{
+                    $diasTotales = 31;
+                }
+
+            for($i = 1; $i <= $diasTotales; $i++){
+
+                if($i == $diasTotales){
+                    $insert = $insert  ."($i,$j,2022,0)"; // el ultimo value va a ser sin ,
+                }else{
+                    $insert = $insert  ."($i,$j,2022,0),"; // desde el primer a anteultimo value van con ,
+                }
+            }
+
+            $sql = "insert into datos (dia,mes,anio,cantidad) values $insert;";
+
+            mysqli_query($con,$sql);
+            if(mysqli_affected_rows($con) > 0){
+                echo "Se ha inicializado el mes " .$j ."correctamente <br>";
+                $insert = "";
+            }else{
+                echo "Hubo un error en la carga del mes " .$j ."<br>";
+            }
+        }
+        echo "---------PROCESO FINALIZADO---------";
+    }
+
+    #endregion
 
 
 ?>
