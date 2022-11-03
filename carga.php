@@ -1,6 +1,5 @@
 <?php 
     require "assets/funciones.php";
-    require "assets/conex.php";
 
     if(validarArray($_POST['lluvia'])){
 
@@ -23,7 +22,8 @@
 
         $indices = lluviaConsecutiva($lluvia);
 
-        insertMes($mes,$anio,$lluvia);
+        // insertMes($mes,$anio,$lluvia);
+        updateMes($mes,$lluvia);
         
 
 ?>

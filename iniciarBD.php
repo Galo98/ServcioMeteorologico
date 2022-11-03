@@ -1,7 +1,6 @@
 <?php 
 
     require "assets/funciones.php";
-    require "assets/conex.php";
 
     if(isset($_POST['cargaBD']) && $_POST['cargaBD'] != ""){
         bdStandar();

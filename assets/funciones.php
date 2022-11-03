@@ -10,10 +10,22 @@
 28 febrero 2
 */
 
+    function conectarBD(){
+        $serv = "localhost";
+        $usu = "root";
+        $pass = "";
+        $bd = "serviciomet";
+        $con = mysqli_connect($serv,$usu,$pass,$bd);
+    return $con;
+    }
+
     #region Funcion crearMes
 
         function crearMes($cantidad,$mes,$año){
-            for($i = 1; $i <= $cantidad; $i++){?> 
+            $sql = "select * from datos where mes = $mes order by dia";
+            $con = conectarBD();
+            $datosDb = mysqli_query($con,$sql);
+            for($i = 1; $datosMes = mysqli_fetch_assoc($datosDb); $i++){?> 
 
                     <label class="label" for="lluvia<?php echo $i;?>">
                         <!-- Ingrese la cantidad llovida para el  -->
@@ -22,7 +34,9 @@
                         }else{
                         echo $i;
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
-                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>">
+                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>" placeholder="<?php 
+                        echo $datosMes['cantidad'];
+                        ?>" pattern = "[0-9]" title='Solo numeros'>
                         <!-- validar que no se ingrese la e y - -->
                         <input type="hidden" name="dia[]" value="<?php echo $i;?>">
                         </label>
@@ -378,5 +392,16 @@
 
     #endregion
 
+    #region
 
+    function updateMes($mes,$array){
+        $con = conectarBD();
+        $dia = 1;
+        for($i = 0; $i < count($array); $i++){
+            mysqli_query($con,"update datos set cantidad = $array[$i] where mes = $mes and dia = $dia");
+            $dia++;
+        }
+    }
+
+    #endregion
 ?>

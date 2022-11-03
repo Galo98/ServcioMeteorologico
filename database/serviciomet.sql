@@ -24,15 +24,15 @@ create table datos(
 	dia int (2),
     mes int (2),
     anio int(4),
-    cantidad float(4,2),
+    cantidad float(9,2),
     foreign key (mes) references mes(mes),
     foreign key (anio) references anio(fecha),
     primary key (dia,mes,anio)
 );
 
--- select * from datos order by mes;
+ select * from datos where mes = 1 order by dia;
 
-
+select sum(cantidad) from datos where mes = 1;
 
 
 # Creacion de Funcion suma sumaPrecipitaciones 
