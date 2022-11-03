@@ -3,4 +3,20 @@
     height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.MesesSinPrecipitaciones, .MesConMayorPrecipitacion{
+    width: 40%;
+    margin-top: 2rem;
+}
+
+
+.titulo--index {
+    line-height: 1.5;
+    text-align: center;
+    font: var(--titulo-700-c);
+    border-bottom: 2px solid green;
 }

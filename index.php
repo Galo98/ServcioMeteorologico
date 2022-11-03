@@ -22,18 +22,18 @@
     <nav class="cabecera-nav">
       <ul class="cabecera__nav-lista">
       <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="ingreso.php">Registrar datos</a></li>
-      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="editar.php">Modificar registros</a></li>
-      <li class="cabecera__nav__lista-item"><a class="__lista__item-link" href="#"></a></li>
       </ul>
     </nav>
   </header>
   <main class="cajaindex">
+
     <div class="MesesSinPrecipitaciones">
-      <h2>Meses sin precipitaciones</h2>
+      <p class="titulo--index">Meses sin precipitaciones</p>
       <?php mesesSinLluvia(); ?>
     </div>
+
     <div class="MesConMayorPrecipitacion">
-      <h2>Mes del 2022 con mayo precipitacion</h2>
+      <p class="titulo--index">Mes del 2022 con mayor precipitacion</p>
       <?php mesMayorPrecipitacion(); ?>
     </div>
   </main>

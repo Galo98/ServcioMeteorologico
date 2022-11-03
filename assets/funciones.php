@@ -345,7 +345,7 @@
                 echo "No hay precipitaciones cargadas en el sistema";
             }else{
                 $mes = buscarMes($mesPrecipitacionMaxima);
-                echo "Del año 2022, el mes con mayor precipitacion es " .$mes ." con la cantidad de " .$precipitacionMaxima ."mm";
+                echo "El mes con mayor precipitacion es " .$mes ." con la cantidad de " .$precipitacionMaxima ."mm";
             }
         }
 
