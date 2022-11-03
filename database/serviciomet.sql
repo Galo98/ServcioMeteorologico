@@ -32,7 +32,7 @@ create table datos(
 
 
 -- select sumaPrecipitaciones(3);
--- select * from datos order by mes;
+select * from datos order by mes;
 
 # drop database serviciomet;
 

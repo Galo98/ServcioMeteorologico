@@ -4,6 +4,7 @@
   require "assets/conex.php";
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,11 +30,12 @@
   </header>
   <main class="cajaindex">
     <div class="MesesSinPrecipitaciones">
-      <h1>Meses sin precipitaciones</h1>
+      <h2>Meses sin precipitaciones</h2>
       <?php mesesSinLluvia(); ?>
     </div>
     <div class="MesConMayorPrecipitacion">
-
+      <h2>Mes del 2022 con mayo precipitacion</h2>
+      <?php mesMayorPrecipitacion(); ?>
     </div>
   </main>
   <footer>

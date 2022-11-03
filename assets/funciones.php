@@ -311,6 +311,24 @@
         }
     #endregion
 
+    #region Funcion mesMayorPrecipitacion
+
+        function mesMayorPrecipitacion(){
+            $mesPrecipitacionMaxima = 0;
+            $precipitacionMaxima = 0;
+            for($i = 1; $i < 13;$i++){
+                $precipitacion = sumaPrecipitacion($i);
+                if($precipitacion > $precipitacionMaxima){
+                    $mesPrecipitacionMaxima = $i;
+                    $precipitacionMaxima = $precipitacion;
+                }
+            }
+            $mes = buscarMes($mesPrecipitacionMaxima);
+            echo "Del año 2022, el mes con mayor precipitacion es " .$mes ." con la cantidad de " .$precipitacionMaxima ."mm";
+        }
+
+    #endregion
+
 
 
 
