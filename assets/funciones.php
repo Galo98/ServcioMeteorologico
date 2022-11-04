@@ -34,9 +34,9 @@
                         }else{
                         echo $i;
                         }?>/<?php if($mes < 10){echo "0" .$mes;}else{echo $mes;}?>/ <?php echo $año;?>
-                        <input class="label-input" type="number" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>" placeholder="<?php 
+                        <input class="label-input" type="text" step="0.01" name="lluvia[]" id="lluvia<?php echo$i;?>" value="<?php 
                         echo $datosMes['cantidad'];
-                        ?>" pattern = "[0-9]" title='Solo numeros'>
+                        ?>" pattern="[0-9\.]+" title='Solo numeros'>
                         <!-- validar que no se ingrese la e y - -->
                         <input type="hidden" name="dia[]" value="<?php echo $i;?>">
                         </label>
