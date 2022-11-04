@@ -54,6 +54,3 @@ body{
     font: var(--texto-500);
 }
 
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
