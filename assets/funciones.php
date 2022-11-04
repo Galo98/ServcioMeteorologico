@@ -10,6 +10,8 @@
 28 febrero 2
 */
 
+
+
     function conectarBD(){
         $serv = "localhost";
         $usu = "root";
@@ -53,7 +55,7 @@
     
     function crearForumario($mostrar){
         
-        $mes = array(" ","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre");
+        $mes = array(" ","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 
 
         for($i = 1; $i <= 12; $i++){
@@ -392,7 +394,7 @@
 
     #endregion
 
-    #region
+    #region Funcion updateMes
 
     function updateMes($mes,$array){
         $con = conectarBD();
@@ -404,4 +406,53 @@
     }
 
     #endregion
+
+    #region Funcion botoneraMeses
+
+    function botoneraMeses(){
+        $mes = array(" ","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+        for($i = 1; $i <= 12 ;$i++ ){ ?>
+            <form action="index.php#muestraContenedor" method="POST">
+                <input type="hidden" name="buscarMes" value="<?php echo $i; ?>">
+                <input class="btn-MesIndex" type="submit" value="<?php echo $mes[$i]; ?>">
+            </form>
+        <?php }
+    }
+
+    #endregion
+
+    #region Funcion  traerPrecipitaciones
+
+    function traerPrecipitaciones($mesEntrada){
+        $con = conectarBD();
+        $sql = "select cantidad from datos where mes = $mesEntrada order by dia";
+
+        $resultados = mysqli_query($con,$sql);
+        $precipitaciones = array();
+        while($datos = mysqli_fetch_assoc($resultados)){
+            array_push($precipitaciones,$datos['cantidad']);
+        }
+        return $precipitaciones;
+    }
+
+    #endregion
+
+    #region Funcion traerDias
+
+    function traerDias($mesEntrada){
+        $con = conectarBD();
+        $sql = "select dia from datos where mes = $mesEntrada order by dia";
+
+        $resultados = mysqli_query($con,$sql);
+        $dias = array();
+        while($datos = mysqli_fetch_assoc($resultados)){
+            array_push($dias,$datos['dia']);
+        }
+        return $dias;
+    }
+
+    #endregion
+
+
+
 ?>
