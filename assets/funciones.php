@@ -55,10 +55,12 @@
     
     function crearForumario($mostrar){
         
+        $fecha = date('m');
+
         $mes = array(" ","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 
 
-        for($i = 1; $i <= 12; $i++){
+        for($i = 1; $i < $fecha; $i++){
 
         if($i == 1 or $i == 3 or $i == 5 or $i == 7 or $i == 8 or $i == 10 or $i == 12){?> 
 
