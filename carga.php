@@ -18,7 +18,9 @@
         
         $resul = lluviaMaxima($lluvia);
         $cantidad = $resul[0];
-        $fec = $resul[1] - 1;
+        if($resul[1] > 0){
+            $fec = $resul[1] ;
+        }
 
         $indices = lluviaConsecutiva($lluvia);
 
@@ -78,11 +80,20 @@
                         <div class="carga-muestra">
                             <div class="carga-dia">
                                 <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
-                                    <p class="carga-datos"><?php echo $dia[$fec]?></p>
+                                    <p class="carga-datos"><?php if($cantidad == 0){
+                                        
+                                        }else{
+                                            echo $dia[$fec];
+                                        }?></p>
                             </div>
                             <div class="carga-precipitacion">
                                 <p class="muestra__contenedor__articulos__titulos-tabla">Precipitación</p>
-                                    <p class="carga-datos"> <?php echo $cantidad;?> <i class="fa-solid fa-droplet gota"></i></p>
+                                    <p class="carga-datos"> <?php if($cantidad == 0){
+                                        
+                                    }else{
+                                        echo $cantidad;?>
+                                        <i class="fa-solid fa-droplet gota"></i></p>
+                                    <?php }?> 
                             </div>
                             </div>
                     </div>

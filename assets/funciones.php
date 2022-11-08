@@ -11,7 +11,6 @@
 */
 
 
-
     function conectarBD(){
         $serv = "localhost";
         $usu = "root";
@@ -55,7 +54,7 @@
     
     function crearForumario($mostrar){
         
-        $fecha = date('m');
+        (date('m') == 12 && date('d') == 31) ? $fecha = 13 : $fecha = date('m');
 
         $mes = array(" ","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 
