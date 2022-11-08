@@ -82,13 +82,22 @@
                       <div class="contenedor-carga">
                           <div class="carga-muestra">
                               <div class="carga-dia">
-                                  <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
-                                      <p class="carga-datos"><?php echo $diasBD[$fec]?></p>
+                                <p class="muestra__contenedor__articulos__titulos-tabla">Día</p>
+                                    <p class="carga-datos"><?php if($cantidad == 0){
+                                        
+                                        }else{
+                                            echo $dia[$fec];
+                                        }?></p>
                               </div>
                               <div class="carga-precipitacion">
-                                  <p class="muestra__contenedor__articulos__titulos-tabla">Precipitación</p>
-                                      <p class="carga-datos"> <?php echo $cantidad;?> <i class="fa-solid fa-droplet gota"></i></p>
-                              </div>
+                                <p class="muestra__contenedor__articulos__titulos-tabla">Precipitación</p>
+                                    <p class="carga-datos"> <?php if($cantidad == 0){
+                                        
+                                    }else{
+                                        echo $cantidad;?>
+                                        <i class="fa-solid fa-droplet gota"></i></p>
+                                    <?php }?> 
+                            </div>
                               </div>
                       </div>
                   </div>
