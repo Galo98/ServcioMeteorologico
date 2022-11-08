@@ -86,7 +86,7 @@
                                     <p class="carga-datos"><?php if($cantidad == 0){
                                         
                                         }else{
-                                            echo $dia[$fec];
+                                            echo $diasBD[$fec];
                                         }?></p>
                               </div>
                               <div class="carga-precipitacion">
